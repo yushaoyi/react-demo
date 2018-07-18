@@ -1,0 +1,24 @@
+
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin line($height) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+    zoom: 1;
+  }
+}
+
+$vm_base: 750;
+@function vw($px) {
+  @return ($px / $vm_base) * 100vw;
+}
