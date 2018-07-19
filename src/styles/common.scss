@@ -1,1 +1,26 @@
-@import "mixin.scss";
+@import "./mixin.scss";
+
+.app-control {
+  position: fixed;
+  z-index: 9999;
+  bottom: 12%;
+  right: 4%;
+
+
+  .app-control-btn {
+    width: vw(90);
+    height: vw(90);
+    border-radius: 50%;
+    background-color: #ddd;
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.3);
+
+    i {
+      font-size: vw(50);
+    }
+
+    &.active {
+      background-color: rgba(254,210,3,0.6);
+    }
+  }
+}
+
