@@ -17,8 +17,8 @@ class AppMain extends Component {
        userInfo: ''
     }
 
-    handleAppControlBtnClick = (event) => {
-        let useInfo = sessionStorage.getItem('userInfo')
+    handleAppControlBtn = (event, context) => {
+        let useInfo = context.userInfo || sessionStorage.getItem('userInfo')
         // todo 先判断是否登录
         if (useInfo) {
             this.props.history.push('/auth/login')
@@ -42,7 +42,7 @@ class AppMain extends Component {
                             <div className="app-control">
                                 <button type="button"
                                         className={ "app-control-btn " + (context.userInfo ? "active" : "") }
-                                        onClick={this.handleAppControlBtnClick.bind(this)}
+                                        onClick={(e) => this.handleAppControlBtn(e, context)}
                                 ><i className="iconfont icon-home"></i></button>
                             </div>
                             <section>
